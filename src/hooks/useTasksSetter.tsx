@@ -11,7 +11,13 @@ const useTasksSetter = () => {
     setTasks((prev) => [...prev, newTask]);
   }
 
-  return { tasks, setTasks, addTask };
+  function toggleStatus(id: string) {
+    setTasks((prev) =>
+      prev.map((task) => (task.id === id ? { ...task, status: !task.status } : task))
+    );
+  }
+
+  return { tasks, setTasks, addTask, toggleStatus };
 };
 
 export { useTasksSetter };
