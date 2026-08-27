@@ -1,12 +1,14 @@
+import { Edit } from "lucide-react";
 import type { taskTypes } from "../../types/taskTypes";
 import ChangeStatusBtn from "../ui/Buttons/ChangeStausBtn/changeStatusBtn";
 
 interface ShowTasksProp {
   tasks: taskTypes[];
   toggleStatus: (id: string) => void;
+  deliverTask: (editingTask: taskTypes) => void;
 }
 
-function ShowTasks({ tasks, toggleStatus }: ShowTasksProp) {
+function ShowTasks({ tasks, toggleStatus, deliverTask }: ShowTasksProp) {
   return (
     <div>
       <h2 className="mb-4 text-center text-2xl font-semibold text-green-800 md:text-3xl">
@@ -36,6 +38,15 @@ function ShowTasks({ tasks, toggleStatus }: ShowTasksProp) {
 
               <div className="flex items-center gap-4">
                 <span className="text-sm whitespace-nowrap text-gray-500">{task.date}</span>
+                {/* Update btn start */}
+                <button
+                  onClick={() => deliverTask(task)}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-green-300 text-green-600 transition-all duration-200 hover:scale-110 hover:cursor-pointer hover:border-green-500 hover:bg-green-50 active:scale-90"
+                  title="Update task"
+                >
+                  <Edit className="w-8" />
+                </button>
+                {/* Update btn end */}
                 <ChangeStatusBtn onClick={() => toggleStatus(task.id)} taskStatus={task.status} />
               </div>
             </div>
