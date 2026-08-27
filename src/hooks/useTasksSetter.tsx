@@ -17,7 +17,11 @@ const useTasksSetter = () => {
     );
   }
 
-  return { tasks, setTasks, addTask, toggleStatus };
+  function updateTask(id: string, editedTask: taskTypes) {
+    setTasks((prev) => prev.map((task) => (task.id === id ? editedTask : task)));
+  }
+
+  return { tasks, addTask, toggleStatus, updateTask };
 };
 
 export { useTasksSetter };
