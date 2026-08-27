@@ -31,7 +31,6 @@ function AddTask({ task, handleChange, handleClickAddBtn }: AddTaskProp) {
         <AddTaskBtn
           onClick={() => {
             handleClickAddBtn();
-            console.log(task);
           }}
           name="Add Task"
         />
