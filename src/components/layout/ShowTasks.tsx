@@ -1,5 +1,5 @@
-import type { taskTypes } from "../../../types/taskTypes";
-import ChangeStatusBtn from "../Buttons/changeStatusBtn";
+import type { taskTypes } from "../../types/taskTypes";
+import ChangeStatusBtn from "../ui/Buttons/changeStatusBtn";
 
 interface ShowTasksProp {
   tasks: taskTypes[];
