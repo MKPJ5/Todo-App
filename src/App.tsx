@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import type { taskTypes } from "./types/taskTypes";
 import { useTasksSetter } from "./hooks/useTasksSetter";
-import ShowTasks from "./components/layout/ShowTasks";
-import AddTaskForm from "./components/layout/AddTask";
-import Header from "./components/layout/Header";
+import ShowTasks from "./components/layout/ShowTasks/ShowTasks";
+import AddTaskForm from "./components/layout/AddTask/AddTask";
+import Header from "./components/layout/Header/Header";
 import EditingWindow from "./components/ui/EditWindow/EditingWindow";
 
 function App() {
