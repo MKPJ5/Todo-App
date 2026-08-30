@@ -18,7 +18,16 @@ const useTasksSetter = () => {
   }
 
   function updateTask(id: string, editedTask: taskTypes) {
-    setTasks((prev) => prev.map((task) => (task.id === id ? editedTask : task)));
+    setTasks((prev) =>
+      prev.map((task) =>
+        task.id === id
+          ? {
+              ...editedTask,
+              date: `Updated at: ${new Date().toLocaleTimeString()} --- Date: ${editedTask.date}`,
+            }
+          : task
+      )
+    );
   }
 
   return { tasks, addTask, toggleStatus, updateTask };
