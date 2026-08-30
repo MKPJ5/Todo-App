@@ -1,4 +1,3 @@
-// hooks/useTasksSetter.ts
 import { useState } from "react";
 import type { taskTypes } from "../types/taskTypes";
 import { getTasks, saveTasks } from "../lib/taskStorage";
