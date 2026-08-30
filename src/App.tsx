@@ -28,7 +28,7 @@ function App() {
     setEditingTask((prev) => ({ ...prev, [name]: value }));
   }
 
-  function handleEditTask(): void {
+  function handleUpdateTask(): void {
     updateTask(editingTask.id, editingTask);
     setEditingTask(initialTask);
     setEditWindow(false);
@@ -60,7 +60,7 @@ function App() {
         {editWindow && (
           <EditingWindow
             editingTask={editingTask}
-            handleEdit={() => handleEditTask()}
+            handleEdit={() => handleUpdateTask()}
             handleInpChange={(e) => handleChangeEdit(e)}
             onClose={() => setEditWindow(false)}
           />
